@@ -1,5 +1,5 @@
-// API base URL - detecta automaticamente o host
-const API_BASE = `${window.location.protocol}//${window.location.hostname}:8000/api/v1`;
+// API base URL - backend no Render
+const API_BASE = 'https://url-shortener-ifay.onrender.com/api/v1';
 
 // Sistema de internacionalização
 const translations = {
