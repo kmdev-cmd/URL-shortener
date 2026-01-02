@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="title">Encurtador de Links • Moderno</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+  <div class="container">
+    <header class="fade-in">
+      <h1>Encurtador de Links</h1>
+      <div class="header-right">
+        <div class="auth-buttons">
+          <button id="btn-login" class="btn btn-secondary">Entrar</button>
+          <button id="btn-register" class="btn btn-secondary">Cadastrar</button>
+          <button id="btn-logout" class="btn btn-secondary hidden">Sair</button>
+        </div>
+        <button id="theme-toggle" class="btn-secondary theme-toggle-btn" title="Alternar tema">
+          <span class="icon-sun">☀️</span>
+          <span class="icon-moon hidden">🌙</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="url-form-section card fade-in">
+        <h2>Encurte sua URL agora</h2>
+        <form id="url-form">
+          <div class="input-group">
+            <input 
+              type="url" 
+              id="original-url" 
+              placeholder="Cole sua URL longa aqui..." 
+              required
+            >
+            <button type="submit" class="btn btn-primary pulse-hover">Encurtar</button>
+          </div>
+          <div class="optional">
+            <input type="text" id="custom-code" placeholder="Código personalizado (opcional)">
+          </div>
+        </form>
+
+        <div id="result" class="result slide-up hidden">
+          <p>Seu link encurtado está pronto:</p>
+          <div class="short-url-container">
+            <input type="text" id="short-url" readonly>
+            <button id="btn-copy" class="btn-copy scale-hover"><i class="fas fa-copy"></i></button>
+          </div>
+          <p class="info">Cliques: <span id="click-count">0</span></p>
+        </div>
+      </section>
+
+      <section id="my-links-section" class="card fade-in hidden">
+        <h2>Meus Links</h2>
+        <div id="links-list">
+          <!-- Links serão inseridos aqui via JavaScript -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="fade-in">
+      <p>Projeto de portfólio • Feito com FastAPI + Python • 2026</p>
+    </footer>
+  </div>
+
+  <!-- Modal -->
+  <div id="auth-modal" class="modal fade-modal hidden">
+    <div class="modal-content scale-in">
+      <span id="close-modal" class="close">&times;</span>
+      <h2 id="modal-title">Entrar</h2>
+      <form id="auth-form">
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Senha" required>
+        <button type="submit" class="btn btn-primary" id="submit-auth">Entrar</button>
+      </form>
+      <p id="toggle-auth">
+        Ainda não tem conta? <a href="#" id="switch-to-register">Cadastre-se</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
